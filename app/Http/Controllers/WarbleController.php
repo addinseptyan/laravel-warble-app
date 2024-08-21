@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Warble;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -13,7 +14,9 @@ class WarbleController extends Controller
      */
     public function index(): View
     {
-        return view('warbles.index');
+        return view('warbles.index', [
+            'warbles' => Warble::with('user')->latest()->get()
+        ]);
     }
 
     /**
@@ -27,7 +30,7 @@ class WarbleController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate([
             'message' => 'required|string|max:255'
