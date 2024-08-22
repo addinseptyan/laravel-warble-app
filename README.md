@@ -11,4 +11,4 @@ Warble is a web application built with Laravel that integrates with Laravel Bree
 
 ## Preview
 
-![2024-08-22 08-20-35](https://github.com/user-attachments/assets/64b96e42-ae95-4657-a4f9-42d001a059e3)
+https://github.com/user-attachments/assets/6eb9587d-572e-4f5c-b5e9-d64f59f0065c
