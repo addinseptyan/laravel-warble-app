@@ -45,7 +45,7 @@ class WarblePolicy
      */
     public function delete(User $user, Warble $warble): bool
     {
-        //
+        return $warble->user()->is($user);
     }
 
     /**

@@ -14,7 +14,10 @@
           <textarea name="message" placeholder="What are you thinking about?"
             class="w-full rounded-lg shadow-sm dark:text-gray-100 dark:bg-gray-800">{{ old('message', $warble->message) }}</textarea>
           <x-input-error :messages="$errors->get('message')" />
-          <x-primary-button>Update</x-primary-button>
+          <div class="space-x-4">
+            <x-primary-button>Update</x-primary-button>
+            <a href="{{ route('warbles.index') }}">{{ __('Cancel') }}</a>
+          </div>
         </form>
       </div>
     </div>

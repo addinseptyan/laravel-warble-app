@@ -82,8 +82,12 @@ class WarbleController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Warble $warble)
+    public function destroy(Warble $warble): RedirectResponse
     {
-        //
+        Gate::authorize('delete', $warble);
+
+        $warble->delete();
+
+        return redirect(route('warbles.index'));
     }
 }

@@ -22,7 +22,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('warbles', WarbleController::class)
-    ->only(['index', 'create', 'store', 'edit', 'update'])
+    ->only(['index', 'create', 'store', 'edit', 'update', 'destroy'])
     ->middleware(['auth', 'verified']);
 
 require __DIR__ . '/auth.php';

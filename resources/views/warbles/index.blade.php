@@ -44,6 +44,14 @@
                       <x-dropdown-link :href="route('warbles.edit', $warble)">
                         Edit
                       </x-dropdown-link>
+                      <form action="{{ route('warbles.destroy', $warble) }}" method="post">
+                        @csrf
+                        @method('delete')
+                        <x-dropdown-link :href="route('warbles.destroy', $warble)" class="text-red-500"
+                          onclick="event.preventDefault(); this.closest('form').submit();">
+                          Delete
+                        </x-dropdown-link>
+                      </form>
                     </x-slot>
                   </x-dropdown>
                 @endif
