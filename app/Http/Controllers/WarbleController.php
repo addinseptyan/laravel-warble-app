@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Warble;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\View\View;
 
 class WarbleController extends Controller
@@ -15,16 +17,16 @@ class WarbleController extends Controller
     public function index(): View
     {
         return view('warbles.index', [
-            'warbles' => Warble::with('user')->latest()->get()
+            'warbles' => Warble::where('user_id', Auth::id())->latest()->get()
         ]);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(): View
     {
-        //
+        return view('warbles.create');
     }
 
     /**
@@ -52,17 +54,29 @@ class WarbleController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Warble $warble)
+    public function edit(Warble $warble): View
     {
-        //
+        Gate::authorize('update', $warble);
+
+        return view('warbles.edit', [
+            'warble' => $warble
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Warble $warble)
+    public function update(Request $request, Warble $warble): RedirectResponse
     {
-        //
+        Gate::authorize('update', $warble);
+
+        $validated = $request->validate([
+            'message' => 'required|string|max:255'
+        ]);
+
+        $warble->update($validated);
+
+        return redirect(route('warbles.index'));
     }
 
     /**

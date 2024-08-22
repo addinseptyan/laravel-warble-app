@@ -3,9 +3,12 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WarbleController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Warble;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', [
+        "warbles" => Warble::with('user')->latest()->take(4)->get()
+    ]);
 });
 
 Route::get('/dashboard', function () {
@@ -19,7 +22,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('warbles', WarbleController::class)
-    ->only(['index', 'store'])
+    ->only(['index', 'create', 'store', 'edit', 'update'])
     ->middleware(['auth', 'verified']);
 
 require __DIR__ . '/auth.php';
