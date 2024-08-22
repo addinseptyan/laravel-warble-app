@@ -16,7 +16,7 @@
           <x-input-error :messages="$errors->get('message')" />
           <div class="space-x-4">
             <x-primary-button>Update</x-primary-button>
-            <a href="{{ route('warbles.index') }}">{{ __('Cancel') }}</a>
+            <a href="{{ route('warbles.index') }}" class="dark:text-white">{{ __('Cancel') }}</a>
           </div>
         </form>
       </div>
