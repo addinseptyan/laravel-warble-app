@@ -1,3 +1,5 @@
+
+https://github.com/user-attachments/assets/c3b811d2-56c0-41fe-b77b-d55047050db4
 # Warble App
 
 Warble is a web application built with Laravel that integrates with Laravel Breeze for authentication and scaffolding. The app implements full CRUD (Create, Read, Update, Delete) functionality, allowing users to interact seamlessly with the data.
@@ -11,4 +13,4 @@ Warble is a web application built with Laravel that integrates with Laravel Bree
 
 ## Preview
 
-https://github.com/user-attachments/assets/6eb9587d-572e-4f5c-b5e9-d64f59f0065c
+https://github.com/user-attachments/assets/3f6135c8-5072-4c16-a58b-0bf75618dc31
