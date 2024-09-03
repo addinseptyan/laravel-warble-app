@@ -22,7 +22,7 @@ Follow the instructions below to clone and set up the project on your local mach
 First, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/addinseptyan/laravel11-livewire3-todo.git
+git clone https://github.com/addinseptyan/laravel-warble-app.git
 ```
 
 ```bash
