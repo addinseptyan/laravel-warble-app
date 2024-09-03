@@ -12,3 +12,82 @@ Warble is a web application built with Laravel that integrates with Laravel Bree
 ## Preview
 
 https://github.com/user-attachments/assets/3f6135c8-5072-4c16-a58b-0bf75618dc31
+
+## Getting Started
+
+Follow the instructions below to clone and set up the project on your local machine.
+
+### 1. Clone the Repository
+
+First, clone the repository to your local machine:
+
+```bash
+git clone https://github.com/addinseptyan/laravel11-livewire3-todo.git
+```
+
+```bash
+cd repository-name
+```
+
+### 2. Install Dependencies
+
+Next, install the required PHP and Node.js dependencies:
+
+```bash
+composer install
+```
+
+```bash
+npm install
+```
+
+### 3. Configure Environment Variables
+
+Copy the \`.env.example\` file to \`.env\` and set up your environment variables:
+
+```bash
+cp .env.example .env
+```
+
+Generate a new application key:
+
+```bash
+php artisan key:generate
+```
+
+### 4. Set Up the Database
+
+Update the \`.env\` file with your database configuration:
+
+```plaintext
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=your_database_name
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+```
+
+Run the database migrations:
+
+```bash
+php artisan migrate
+```
+
+### 5. Start the Development Server
+
+Finally, serve the application locally:
+
+```bash
+php artisan serve
+```
+
+```bash
+npm run dev
+```
+
+Open your browser and navigate to:
+
+```
+http://localhost:8000
+```
